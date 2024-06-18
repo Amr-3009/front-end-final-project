@@ -1,0 +1,63 @@
+.aboutSection3Wrapper {
+  padding: 120px 152px;
+  background-color: #f9f9f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 131px;
+  .infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    .infoText {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        line-height: 60px;
+        font-weight: 500;
+        color: #2c2f24;
+      }
+      p {
+        font-family: "DM Sans", sans-serif;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: 400;
+        color: #414536;
+      }
+    }
+    .infoCards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      .card {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        /* padding: 30px 105px 40px 105px; */
+        padding: 30px 0px 40px 0px;
+        background-color: white;
+        border-radius: 8px;
+        border: 1px solid #dbdfd0;
+        h3 {
+          font-family: "Playfair Display", serif;
+          font-size: 55px;
+          line-height: 60px;
+          font-weight: 500;
+          color: #2c2f24;
+        }
+        p {
+          font-family: "DM Sans", sans-serif;
+          font-size: 18px;
+          line-height: 24px;
+          font-weight: 500;
+          color: #414536;
+        }
+      }
+    }
+  }
+}

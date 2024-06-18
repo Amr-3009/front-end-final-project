@@ -1,0 +1,70 @@
+.testimonialsSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 98px 152px 135px 152px;
+  gap: 64px;
+  width: 100%;
+  h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 60.5px;
+    color: #2c2f24;
+  }
+  .cardsContainer {
+    display: flex;
+    gap: 24px;
+    .card {
+      border-radius: 12px;
+      background-color: #f9f9f7;
+      padding: 45px 35px 35px 35px;
+      .title {
+        font-family: "DM Sans", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -3%;
+        color: #ad343e;
+        margin-bottom: 24px;
+      }
+      .content {
+        font-family: "DM Sans", sans-serif;
+        font-size: 19px;
+        font-weight: 500;
+        line-height: 28px;
+        color: #414536;
+        margin-bottom: 32px;
+      }
+      .divider {
+        margin-bottom: 32px;
+        border: 1px solid #dbdfd0;
+      }
+      .userCard {
+        display: flex;
+        gap: 20px;
+        .userInfo {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 3px;
+          .userName {
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
+            color: #2c2f24;
+          }
+          .userAddress {
+            font-family: "DM Sans", sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 24px;
+            color: #414536;
+          }
+        }
+      }
+    }
+  }
+}

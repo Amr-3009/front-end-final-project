@@ -1,0 +1,64 @@
+.aboutSection2Wrapper {
+  .mainContentWrapper {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-image: url("../../../Assets/Images/about-content.png");
+    background-repeat: no-repeat;
+    .heroWrapper {
+      padding: 214px 502px 215px 502px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      gap: 34px;
+      .iconWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 106px;
+        height: 106px;
+        background-color: #f9f9f7;
+        border-radius: 50%;
+      }
+      h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 50px;
+        line-height: 60px;
+        font-weight: 500;
+        color: #fff;
+        text-align: center;
+      }
+    }
+  }
+  .featuresWrapper {
+    padding: 0 164px 95px 164px;
+    display: flex;
+    gap: 87px;
+    .feature{
+      display: flex;
+      gap: 24px;
+      .featureContent{
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        h3{
+          font-family: "DM Sans", sans-serif;
+          font-size: 20px;
+          line-height: 26px;
+          font-weight: 700;
+          color: #2C2F24;
+        }
+        p{
+          font-family: "DM Sans", sans-serif;
+          font-size: 16px;
+          line-height: 24px;
+          font-weight: 400;
+          color: #414536;
+        }
+      }
+    }
+  }
+}

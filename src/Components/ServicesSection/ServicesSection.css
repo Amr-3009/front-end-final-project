@@ -1,0 +1,39 @@
+.servicesSectionWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 120px 152px;
+  h2 {
+    width: 50%;
+    font-family: "Playfair Display", serif;
+    font-size: 55px;
+    font-weight: 500;
+    line-height: 61px;
+    color: #2c2f24;
+    margin-bottom: 64px;
+  }
+  .cardContainer {
+    display: flex;
+    gap: 24px;
+    .card {
+      img {
+        margin-bottom: 30px;
+      }
+      h3 {
+        margin-bottom: 15px;
+        font-family: "DM Sans", sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        letter-spacing: -3%;
+        color: #2c2f24;
+      }
+      p {
+        font-family: "DM Sans", sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 24px;
+        color: #414536;
+      }
+    }
+  }
+}

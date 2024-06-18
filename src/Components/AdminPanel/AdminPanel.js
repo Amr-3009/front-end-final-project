@@ -1,0 +1,24 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import "./AdminPanel.css";
+
+const AdminPanel = () => {
+  return (
+    <div className="panelWrapper">
+      <h1>What would you like to do?</h1>
+      <ul>
+        <li>
+          <Link to="/admin-panel/view-menu-items">View Menu Items</Link>
+        </li>
+        <li>
+          <Link>View Users</Link>
+        </li>
+        <li>
+          <Link>View Bookings</Link>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default AdminPanel;

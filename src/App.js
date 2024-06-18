@@ -10,6 +10,7 @@ import Register from "./Routes/Register";
 import Login from "./Routes/Login";
 import AdminPanel from "./Components/AdminPanel/AdminPanel";
 import ViewMenuComp from "./Components/ViewMenuComp/ViewMenuComp";
+import EditMenuComp from "./Components/EditMenuComp/EditMenuComp";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/admin-panel/view-menu-items" element={<ViewMenuComp />} />
+        <Route path="/admin-panel/edit-menu-item/:id" element={<EditMenuComp />} />
       </Routes>
       <Footer />
     </>

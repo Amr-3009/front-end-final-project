@@ -65,7 +65,7 @@ const ViewMenuComp = () => {
       console.log(err);
     }
   };
-  const [showTable, setShowTable] = useState(true);
+  const [showTable, setShowTable] = useState(false);
   const handleTable = () => {
     setShowTable(!showTable);
   };

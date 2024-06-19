@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const EditMenuComp = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
   const [menu, setMenu] = useState({
     name: "",
     price: "",
@@ -11,19 +12,29 @@ const EditMenuComp = () => {
     category: "",
     image: null,
   });
+
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/menu/${id}`, menu)
+      .get(`http://127.0.0.1:8000/api/menu/${id}`)
       .then((res) => {
         setMenu(res.data);
-        console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [id]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
+
   return (
     <div className="viewMenuWrapper">
-      <form>
-        <img src={`http://127.0.0.1:8000/${menu.image}`} alt={menu.name}/>
+      <form encType="multipart/form-data" method="PUT" onSubmit={handleSubmit}>
+        <img
+          src={`http://127.0.0.1:8000/${menu.image}`}
+          alt={menu.name}
+          width={306}
+          height={230}
+        />
         <div className="row">
           <label>Name</label>
           <input
@@ -64,7 +75,19 @@ const EditMenuComp = () => {
             <option value="Drinks">Drinks</option>
           </select>
         </div>
-
+        <div className="row">
+          <label>Image</label>
+          <input
+            type="file"
+            name="image"
+            onChange={(e) => setMenu({ ...menu, image: e.target.files[0] })}
+          />
+        </div>
+        <div className="row">
+          <button type="submit" onClick={handleUpdate}>
+            Update Item
+          </button>
+        </div>
       </form>
     </div>
   );

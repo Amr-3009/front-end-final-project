@@ -84,9 +84,7 @@ const EditMenuComp = () => {
           />
         </div>
         <div className="row">
-          <button type="submit" onClick={handleUpdate}>
-            Update Item
-          </button>
+          <button type="submit">Update Item</button>
         </div>
       </form>
     </div>

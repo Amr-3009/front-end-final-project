@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const EditMenuComp = () => {
   const { id } = useParams();
-  const navigate = useNavigate();
-  const [menu, setMenu] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     price: "",
     ingredients: "",
@@ -17,58 +16,101 @@ const EditMenuComp = () => {
     axios
       .get(`http://127.0.0.1:8000/api/menu/${id}`)
       .then((res) => {
-        setMenu(res.data);
+        setFormData(res.data);
       })
       .catch((err) => console.log(err));
   }, [id]);
 
-  const handleSubmit = (e) => {
+  const formSubmit = (e) => {
     e.preventDefault();
+  };
+
+  const handleSubmit = (e) => {
+    const updatedData = new FormData();
+    updatedData.append("name", formData.name);
+    updatedData.append("price", formData.price);
+    updatedData.append("ingredients", formData.ingredients);
+    updatedData.append("category", formData.category);
+
+    for (let [key, value] of updatedData.entries()) {
+      console.log(`${key}: ${value}`);
+    }
+
+    if (formData.image) {
+      updatedData.append("image", formData.image);
+    }
+
+    axios
+      .put(`http://127.0.0.1:8000/api/menu/${id}`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
     <div className="viewMenuWrapper">
-      <form encType="multipart/form-data" method="PUT" onSubmit={handleSubmit}>
+      <form
+        encType="multipart/form-data"
+        method="POST"
+        onSubmit={(e) => formSubmit(e)}
+      >
         <img
-          src={`http://127.0.0.1:8000/${menu.image}`}
-          alt={menu.name}
+          src={`http://127.0.0.1:8000/${formData.image}`}
+          alt={formData.name}
           width={306}
           height={230}
+          style={{ objectFit: "cover" }}
         />
         <div className="row">
-          <label>Name</label>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             name="name"
-            value={menu.name}
-            onChange={(e) => setMenu({ ...menu, name: e.target.value })}
+            id="name"
+            value={formData.name}
+            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
           />
         </div>
         <div className="row">
-          <label>Price</label>
+          <label htmlFor="price">Price</label>
           <input
             type="number"
             name="price"
-            value={menu.price}
-            onChange={(e) => setMenu({ ...menu, price: e.target.value })}
+            id="price"
+            value={formData.price}
+            onChange={(e) =>
+              setFormData({ ...formData, price: e.target.value })
+            }
           />
         </div>
         <div className="row">
-          <label>Ingredients</label>
+          <label htmlFor="ingredients">Ingredients</label>
           <textarea
             type="text"
             name="ingredients"
-            value={menu.ingredients}
-            onChange={(e) => setMenu({ ...menu, ingredients: e.target.value })}
+            id="ingredients"
+            value={formData.ingredients}
+            onChange={(e) =>
+              setFormData({ ...formData, ingredients: e.target.value })
+            }
           />
         </div>
         <div className="row">
-          <label>Category</label>
+          <label htmlFor="category">Category</label>
           <select
             name="category"
-            value={menu.category}
-            onChange={(e) => setMenu({ ...menu, category: e.target.value })}
+            id="category"
+            value={formData.category}
+            onChange={(e) =>
+              setFormData({ ...formData, category: e.target.value })
+            }
           >
+            <option>Select a Category</option>
             <option value="Breakfast">Breakfast</option>
             <option value="Main Dishes">Main Dishes</option>
             <option value="Desserts">Desserts</option>
@@ -76,15 +118,20 @@ const EditMenuComp = () => {
           </select>
         </div>
         <div className="row">
-          <label>Image</label>
+          <label htmlFor="image">Image</label>
           <input
             type="file"
             name="image"
-            onChange={(e) => setMenu({ ...menu, image: e.target.files[0] })}
+            id="image"
+            onChange={(e) =>
+              setFormData({ ...formData, image: e.target.files[0] })
+            }
           />
         </div>
         <div className="row">
-          <button type="submit">Update Item</button>
+          <button type="submit" onClick={handleSubmit}>
+            Update Item
+          </button>
         </div>
       </form>
     </div>

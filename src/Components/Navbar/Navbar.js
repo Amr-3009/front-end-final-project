@@ -36,12 +36,12 @@ const Navbar = () => {
             </NavLink>
           </li>
           <li>
-            <NavLink className="hoverEff" to="/login">
+            <NavLink className="hoverEff" to="/user-login">
               Login
             </NavLink>
           </li>
           <li>
-            <NavLink className="hoverEff" to="/register">
+            <NavLink className="hoverEff" to="/user-register">
               Register
             </NavLink>
           </li>

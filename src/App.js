@@ -22,11 +22,14 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/booking" element={<Booking />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/user-register" element={<Register />} />
+        <Route path="/user-login" element={<Login />} />
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/admin-panel/view-menu-items" element={<ViewMenuComp />} />
-        <Route path="/admin-panel/edit-menu-item/:id" element={<EditMenuComp />} />
+        <Route
+          path="/admin-panel/edit-menu-item/:id"
+          element={<EditMenuComp />}
+        />
       </Routes>
       <Footer />
     </>

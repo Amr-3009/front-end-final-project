@@ -11,6 +11,7 @@ import Login from "./Routes/Login";
 import AdminPanel from "./Components/AdminPanel/AdminPanel";
 import ViewMenuComp from "./Components/ViewMenuComp/ViewMenuComp";
 import EditMenuComp from "./Components/EditMenuComp/EditMenuComp";
+import ViewUsersComp from "./Components/ViewUsersComp/ViewUsersComp";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
           path="/admin-panel/edit-menu-item/:id"
           element={<EditMenuComp />}
         />
+        <Route path="/admin-panel/view-users" element={<ViewUsersComp />} />
       </Routes>
       <Footer />
     </>

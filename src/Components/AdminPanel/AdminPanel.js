@@ -11,7 +11,7 @@ const AdminPanel = () => {
           <Link to="/admin-panel/view-menu-items">View Menu Items</Link>
         </li>
         <li>
-          <Link>View Users</Link>
+          <Link to="/admin-panel/view-users">View Users</Link>
         </li>
         <li>
           <Link>View Bookings</Link>

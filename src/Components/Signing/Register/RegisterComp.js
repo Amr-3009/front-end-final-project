@@ -3,8 +3,10 @@ import "../signing.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const RegisterComp = () => {
+  const navigate = useNavigate();
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -15,6 +17,7 @@ const RegisterComp = () => {
       .post("http://127.0.0.1:8000/api/user-register", user)
       .then((res) => {
         console.log(res.data);
+        navigate("/user-login");
       })
       .catch((err) => console.log(err));
   };
@@ -35,6 +38,7 @@ const RegisterComp = () => {
               placeholder="Name"
               value={user.name}
               onChange={(e) => setUser({ ...user, name: e.target.value })}
+              autoComplete="on"
             />
           </div>
           <div className="form-group">
@@ -45,6 +49,7 @@ const RegisterComp = () => {
               placeholder="Email"
               value={user.email}
               onChange={(e) => setUser({ ...user, email: e.target.value })}
+              autoComplete="on"
             />
           </div>
           <div className="form-group">

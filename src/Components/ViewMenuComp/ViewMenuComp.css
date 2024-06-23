@@ -2,7 +2,8 @@
   margin: 20px;
   padding: 20px;
 
-  h2 {
+  h2,
+  h1 {
     font-family: "Playfair Display", serif;
     font-size: 35px;
     font-weight: bold;
@@ -11,7 +12,7 @@
     margin-bottom: 20px;
   }
 
-  form{
+  form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -28,12 +29,14 @@
     color: #ad343e;
     font-weight: 500;
     width: 50%;
-    .row{
+    .row {
       width: 100%;
       display: flex;
       flex-direction: column;
       gap: 10px;
-      input, textarea, select{
+      input,
+      textarea,
+      select {
         background-color: white;
         padding: 10px;
         border-radius: 8px;
@@ -46,7 +49,7 @@
         border: none;
         box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
       }
-      button{
+      button {
         padding: 10px;
         border-radius: 8px;
         font-family: "dm sans", sans-serif;
@@ -59,10 +62,9 @@
         color: white;
         border: none;
         transition: all 0.3s;
-        &:hover{
+        &:hover {
           background-color: #2c2f24;
         }
-      
       }
     }
   }

@@ -10,6 +10,7 @@ const EditMenuComp = () => {
     ingredients: "",
     category: "",
     image: null,
+    newImage: null,
   });
 
   useEffect(() => {
@@ -32,24 +33,35 @@ const EditMenuComp = () => {
     updatedData.append("ingredients", formData.ingredients);
     updatedData.append("category", formData.category);
 
+    if (formData.newImage) {
+      updatedData.append("image", formData.newImage);
+    }
+
     for (let [key, value] of updatedData.entries()) {
       console.log(`${key}: ${value}`);
     }
 
-    if (formData.image) {
-      updatedData.append("image", formData.image);
-    }
-
     axios
-      .put(`http://127.0.0.1:8000/api/menu/${id}`, formData, {
+      .post(`http://127.0.0.1:8000/api/menu/${id}?_method=PUT`, updatedData, {
         headers: {
           "Content-Type": "multipart/form-data",
+          Accept: "application/json",
+          "X-HTTP-Method-Override": "PUT",
         },
       })
       .then((res) => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
+  };
+
+  const handleImageChange = (e) => {
+    if (e.target.files[0]) {
+      setFormData({
+        ...formData,
+        newImage: e.target.files[0],
+      });
+    }
   };
 
   return (
@@ -59,13 +71,23 @@ const EditMenuComp = () => {
         method="POST"
         onSubmit={(e) => formSubmit(e)}
       >
-        <img
-          src={`http://127.0.0.1:8000/${formData.image}`}
-          alt={formData.name}
-          width={306}
-          height={230}
-          style={{ objectFit: "cover" }}
-        />
+        {formData.newImage ? (
+          <img
+            src={URL.createObjectURL(formData.newImage)}
+            alt="Preview"
+            width={306}
+            height={230}
+            style={{ objectFit: "cover" }}
+          />
+        ) : formData.image ? (
+          <img
+            src={`http://127.0.0.1:8000/${formData.image}`}
+            alt={formData.name}
+            width={306}
+            height={230}
+            style={{ objectFit: "cover" }}
+          />
+        ) : null}
         <div className="row">
           <label htmlFor="name">Name</label>
           <input
@@ -123,9 +145,7 @@ const EditMenuComp = () => {
             type="file"
             name="image"
             id="image"
-            onChange={(e) =>
-              setFormData({ ...formData, image: e.target.files[0] })
-            }
+            onChange={handleImageChange}
           />
         </div>
         <div className="row">

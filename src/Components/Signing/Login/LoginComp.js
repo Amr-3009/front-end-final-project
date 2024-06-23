@@ -1,23 +1,61 @@
 import React from "react";
 import "../signing.css";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const LoginComp = () => {
+  const navigate = useNavigate();
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+  const hanldeLogin = () => {
+    axios
+      .post("http://127.0.0.1:8000/api/user-login", user, {
+        withCredentials: true,
+      })
+      .then((res) => {
+        console.log(res.data);
+        localStorage.setItem("UserToken", res.data.token);
+        navigate("/home");
+      })
+      .catch((err) => console.log(err));
+  };
+  const preventDefault = (e) => {
+    e.preventDefault();
+  };
   return (
     <>
       <div className="filler"></div>
       <div className="sectionWrapper">
         <h1>Login</h1>
-        <form>
+        <form onSubmit={(e) => preventDefault(e)}>
           <div className="form-group">
             <label htmlFor="email">Email address</label>
-            <input type="email" id="email" placeholder="Email" />
+            <input
+              type="email"
+              id="email"
+              placeholder="Email"
+              value={user.email}
+              onChange={(e) => setUser({ ...user, email: e.target.value })}
+              autoComplete="on"
+            />
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input type="password" id="password" placeholder="Password" />
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              value={user.password}
+              onChange={(e) => setUser({ ...user, password: e.target.value })}
+            />
           </div>
-          <button type="submit">Login</button>
+          <button type="submit" onClick={hanldeLogin}>
+            Login
+          </button>
           <p>
             Don't have an account? <Link to="/register">Register</Link>
           </p>

@@ -18,10 +18,20 @@ const LoginComp = () => {
       })
       .then((res) => {
         console.log(res.data);
-        localStorage.setItem("UserToken", res.data.token);
+        const userToken = res.data.UserToken;
+        const userId = res.data.userID;
+        localStorage.setItem("UserId", userId);
+        localStorage.setItem("UserToken", userToken);
+        // axios.defaults.headers.common[
+        //   "Authorization"
+        // ] = `Bearer ${res.data.UserToken}`;
         navigate("/home");
+        return true;
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        return false;
+      });
   };
   const preventDefault = (e) => {
     e.preventDefault();

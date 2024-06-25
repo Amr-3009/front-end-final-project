@@ -13,6 +13,8 @@ import ViewMenuComp from "./Components/ViewMenuComp/ViewMenuComp";
 import EditMenuComp from "./Components/EditMenuComp/EditMenuComp";
 import ViewUsersComp from "./Components/ViewUsersComp/ViewUsersComp";
 import UserProfile from "./Components/UserProfile/UserProfile";
+import Logout from "./Routes/Logout";
+import AdminLogin from "./Routes/AdminLogin";
 
 function App() {
   return (
@@ -34,6 +36,8 @@ function App() {
         />
         <Route path="/admin-panel/view-users" element={<ViewUsersComp />} />
         <Route path="/user-profile" element={<UserProfile />} />
+        <Route path="/logout" element={<Logout />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
       </Routes>
       <Footer />
     </>

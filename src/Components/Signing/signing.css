@@ -15,7 +15,7 @@
     color: #2c2f24;
     margin-bottom: 48px;
   }
-  p{
+  p {
     font-family: "DM Sans", sans-serif;
     font-size: 48px;
     font-weight: 400;
@@ -83,6 +83,93 @@
       }
     }
   }
+  .buttonWrapper {
+    background-color: white;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    p {
+      font-family: "DM Sans", sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #182226;
+    }
+    .buttons {
+      display: flex;
+      gap: 24px;
+      .ghostBtn {
+        /* font */
+        font-family: "DM Sans", sans-serif;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 24px;
+        color: #182226;
+        /* display */
+        display: inline-block;
+        /* position */
+        position: relative;
+        z-index: 1;
+        /* style */
+        border: 2px solid #2c2f24;
+        border-radius: 1000px;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+        padding: 10px 20px;
+        width: 240px;
+        /* animation */
+        transition: all 0.3s;
+        text-decoration: none;
+        &:hover {
+          color: white;
+        }
+      }
+      .filledBtn {
+        /* font */
+        font-family: "DM Sans", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: white;
+        /* style */
+        width: 240px;
+        padding: 20px 32px;
+        background-color: #ad343e;
+        cursor: pointer;
+        border-radius: 1000px;
+        border: none;
+        outline: none;
+        text-decoration: none;
+        text-align: center;
+      }
+    }
+  }
+  .textWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+    margin-bottom: 48px;
+    gap: 24px;
+    p {
+      font-family: "DM Sans", sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #495460;
+      margin-bottom: 0;
+      a {
+        color: #ad343e;
+        text-decoration: none;
+      }
+    }
+  }
 }
 .filler {
   height: 129px;
@@ -92,4 +179,21 @@
   z-index: -1;
   top: 0%;
   left: 0%;
+}
+
+.ghostBtn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -2%;
+  width: 104%;
+  height: 100%;
+  background-color: #2c2f24;
+  transform: scaleX(0);
+  transition: all 0.5s;
+  border-radius: 1000px;
+  z-index: -1;
+}
+.ghostBtn:hover::before {
+  transform: scaleX(1);
 }

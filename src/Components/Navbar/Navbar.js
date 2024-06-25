@@ -5,10 +5,6 @@ import WebsiteLogoSVG from "../../Assets/Images/japanese-food.svg";
 import "./Navbar.css";
 
 const Navbar = () => {
-  // const userToken = false;
-  // const adminToken = false;
-  const userToken = true;
-  const adminToken = true;
   return (
     <header>
       <Header />
@@ -45,26 +41,25 @@ const Navbar = () => {
               Register
             </NavLink>
           </li>
-          {adminToken ? (
-            <li>
-              <NavLink className="hoverEff" to="/admin-panel">
-                Admin Panel
-              </NavLink>
-            </li>
-          ) : null}
-          {userToken ? (
-            <li>
-              <NavLink className="hoverEff" to="/user-profile">
-                Profile
-              </NavLink>
-            </li>
-          ) : null}
+          <li>
+            <NavLink className="hoverEff" to="/admin-panel">
+              Admin Panel
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="hoverEff" to="/user-profile">
+              Profile
+            </NavLink>
+          </li>
+          <li>
+            <NavLink className="hoverEff" to="/logout">
+              Log out
+            </NavLink>
+          </li>
         </ul>
-        {userToken ? (
-          <NavLink className="btn" to="/booking">
-            Book A Table
-          </NavLink>
-        ) : null}
+        <NavLink className="btn" to="/booking">
+          Book A Table
+        </NavLink>
       </nav>
     </header>
   );

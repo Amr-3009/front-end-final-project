@@ -5,7 +5,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const LoginComp = () => {
+const AdminLogComp = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState({
     email: "",
@@ -40,10 +40,10 @@ const LoginComp = () => {
     <>
       <div className="filler"></div>
       <div className="sectionWrapper">
-        <h1>Login</h1>
+        <h1>Admin Login</h1>
         <form onSubmit={(e) => preventDefault(e)}>
           <div className="form-group">
-            <label htmlFor="email">Email address</label>
+            <label htmlFor="email">Admin Email</label>
             <input
               type="email"
               id="email"
@@ -54,7 +54,7 @@ const LoginComp = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Password</label>
+            <label htmlFor="password">Admin Password</label>
             <input
               type="password"
               id="password"
@@ -64,20 +64,12 @@ const LoginComp = () => {
             />
           </div>
           <button type="submit" onClick={hanldeLogin}>
-            Login
+            Admin Login
           </button>
-          <div className="textWrapper">
-            <p>
-              Don't have an account? <Link to="/register">Register</Link>
-            </p>
-            <p>
-              Our admins kindly login <Link to="/admin-login">here</Link>
-            </p>
-          </div>
         </form>
       </div>
     </>
   );
 };
 
-export default LoginComp;
+export default AdminLogComp;

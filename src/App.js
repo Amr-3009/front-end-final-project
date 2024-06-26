@@ -34,7 +34,6 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
-        <Route path="/booking" element={<Booking />} />
         {/*Signing & log out handling Routes */}
         <Route path="/user-register" element={<Register />} />
         <Route path="/admin-panel/admin-register" element={<AdminRegister />} />
@@ -48,11 +47,10 @@ function App() {
         <Route path="/admin-panel/view-bookings" element={<ViewBookings />} />
         <Route path="/admin-panel/view-users" element={<ViewUsers />} />
         {/*User Routes*/}
+        <Route path="/booking" element={<Booking />} />
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/my-bookings" element={<MyBookings />} />
         {/*Error Routes*/}
-        <Route path="/error" element={<Error />} />
-        <Route path="/login-please" element={<LoginPlease />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

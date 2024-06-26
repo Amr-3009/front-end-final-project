@@ -62,7 +62,7 @@ const Navbar = () => {
                 </NavLink>
               </li>
             ) : null}
-            {userId === null ? (
+            {userId === null && adminId === null ? (
               <li>
                 <NavLink
                   className="hoverEff"

@@ -22,6 +22,8 @@ const AdminLogComp = () => {
         const adminId = res.data.adminID;
         localStorage.setItem("AdminId", adminId);
         localStorage.setItem("AdminToken", adminToken);
+        navigate("/admin-panel");
+        window.location.reload();
         // axios.defaults.headers.common[
         //   "Authorization"
         // ] = `Bearer ${res.data.UserToken}`;

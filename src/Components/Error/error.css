@@ -1,0 +1,12 @@
+.error{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 3rem;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}

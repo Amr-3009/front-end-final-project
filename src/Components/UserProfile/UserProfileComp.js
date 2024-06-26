@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 
-const UserProfile = () => {
+const UserProfileComp = () => {
   const userId = localStorage.getItem("UserId");
   const [user, setUser] = useState({
     name: "",
@@ -98,4 +98,4 @@ const UserProfile = () => {
   );
 };
 
-export default UserProfile;
+export default UserProfileComp;

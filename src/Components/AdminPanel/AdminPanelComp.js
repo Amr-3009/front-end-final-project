@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./AdminPanel.css";
 
-const AdminPanel = () => {
+const AdminPanelComp = () => {
   return (
     <div className="panelWrapper">
       <h1>What would you like to do?</h1>
@@ -24,4 +24,4 @@ const AdminPanel = () => {
   );
 };
 
-export default AdminPanel;
+export default AdminPanelComp;

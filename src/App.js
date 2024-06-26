@@ -8,16 +8,17 @@ import Menu from "./Routes/Menu";
 import Booking from "./Routes/Booking";
 import Register from "./Routes/Register";
 import Login from "./Routes/Login";
-import AdminPanel from "./Components/AdminPanel/AdminPanel";
-import ViewMenuComp from "./Components/ViewMenuComp/ViewMenuComp";
-import EditMenuComp from "./Components/EditMenuComp/EditMenuComp";
-import ViewUsersComp from "./Components/ViewUsersComp/ViewUsersComp";
-import UserProfile from "./Components/UserProfile/UserProfile";
+import AdminPanel from "./Routes/AdminPanel";
+import ViewMenu from "./Routes/ViewMenu";
+import EditMenu from "./Routes/EditMenu";
+import ViewUsers from "./Routes/ViewUsers";
+import UserProfile from "./Routes/UserProfile";
 import Logout from "./Routes/Logout";
 import AdminLogin from "./Routes/AdminLogin";
 import ViewBookings from "./Routes/ViewBookings";
 import MyBookings from "./Routes/MyBookings";
 import AdminRegister from "./Routes/AdminRegister";
+import Error from "./Routes/Error";
 
 function App() {
   return (
@@ -38,16 +39,15 @@ function App() {
         <Route path="/logout" element={<Logout />} />
         {/*Admin Panel Routes*/}
         <Route path="/admin-panel" element={<AdminPanel />} />
-        <Route path="/admin-panel/view-menu-items" element={<ViewMenuComp />} />
-        <Route
-          path="/admin-panel/edit-menu-item/:id"
-          element={<EditMenuComp />}
-        />
+        <Route path="/admin-panel/view-menu-items" element={<ViewMenu />} />
+        <Route path="/admin-panel/edit-menu-item/:id" element={<EditMenu />} />
         <Route path="/admin-panel/view-bookings" element={<ViewBookings />} />
-        <Route path="/admin-panel/view-users" element={<ViewUsersComp />} />
+        <Route path="/admin-panel/view-users" element={<ViewUsers />} />
         {/*User Routes*/}
         <Route path="/user-profile" element={<UserProfile />} />
         <Route path="/my-bookings" element={<MyBookings />} />
+        {/*Error Routes*/}
+        <Route path="/error" element={<Error />} />
       </Routes>
       <Footer />
     </>

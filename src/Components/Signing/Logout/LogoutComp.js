@@ -10,6 +10,7 @@ const LogoutComp = () => {
     localStorage.removeItem("UserId");
     localStorage.removeItem("AdminId");
     navigate("/home");
+    window.location.reload();
   };
   return (
     <>

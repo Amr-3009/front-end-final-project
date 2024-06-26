@@ -19,6 +19,8 @@ import ViewBookings from "./Routes/ViewBookings";
 import MyBookings from "./Routes/MyBookings";
 import AdminRegister from "./Routes/AdminRegister";
 import Error from "./Routes/Error";
+import LoginPlease from "./Routes/LoginPlease";
+import NotFound from "./Routes/NotFound";
 
 function App() {
   return (
@@ -48,6 +50,8 @@ function App() {
         <Route path="/my-bookings" element={<MyBookings />} />
         {/*Error Routes*/}
         <Route path="/error" element={<Error />} />
+        <Route path="/login-please" element={<LoginPlease />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </>

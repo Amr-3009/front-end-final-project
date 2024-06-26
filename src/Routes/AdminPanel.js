@@ -1,11 +1,10 @@
-import React from 'react'
-import AdminPanelComp from '../Components/AdminPanel/AdminPanelComp'
-
+import React from "react";
+import AdminPanelComp from "../Components/AdminPanel/AdminPanelComp";
+import Error from "./Error";
 
 const AdminPanel = () => {
-  return (
-    <AdminPanelComp />
-  )
-}
+  const adminId = localStorage.getItem("AdminId");
+  return <>{adminId !== null ? <AdminPanelComp /> : <Error />}</>;
+};
 
-export default AdminPanel
+export default AdminPanel;

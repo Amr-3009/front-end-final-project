@@ -22,10 +22,8 @@ const LoginComp = () => {
         const userId = res.data.userID;
         localStorage.setItem("UserId", userId);
         localStorage.setItem("UserToken", userToken);
-        // axios.defaults.headers.common[
-        //   "Authorization"
-        // ] = `Bearer ${res.data.UserToken}`;
         navigate("/home");
+        window.location.reload();
         return true;
       })
       .catch((err) => {

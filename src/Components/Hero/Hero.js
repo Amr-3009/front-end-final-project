@@ -3,7 +3,8 @@ import "./Hero.css";
 import { Link } from "react-router-dom";
 
 const Hero = () => {
-  const userToken = true;
+  const userId = localStorage.getItem("UserId");
+  const adminId = localStorage.getItem("AdminId");
   return (
     <>
       <div className="heroSection">
@@ -15,7 +16,10 @@ const Hero = () => {
           </p>
         </div>
         <div className="btnContainer">
-          <Link className="filled-btn" to={userToken ? "/booking" : null}>
+          <Link
+            className="filled-btn"
+            to={userId !== null ? "/booking" : "/login-please"}
+          >
             Book A Table
           </Link>
           <Link className="ghost-btn" to="/menu">

@@ -14,7 +14,10 @@ const AdminPanel = () => {
           <Link to="/admin-panel/view-users">View Users</Link>
         </li>
         <li>
-          <Link>View Bookings</Link>
+          <Link to="/admin-panel/view-bookings">View Bookings</Link>
+        </li>
+        <li>
+          <Link to="/admin-panel/admin-register">Register a new Admin</Link>
         </li>
       </ul>
     </div>

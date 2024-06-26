@@ -15,29 +15,39 @@ import ViewUsersComp from "./Components/ViewUsersComp/ViewUsersComp";
 import UserProfile from "./Components/UserProfile/UserProfile";
 import Logout from "./Routes/Logout";
 import AdminLogin from "./Routes/AdminLogin";
+import ViewBookings from "./Routes/ViewBookings";
+import MyBookings from "./Routes/MyBookings";
+import AdminRegister from "./Routes/AdminRegister";
 
 function App() {
   return (
     <>
       <Navbar />
       <Routes>
+        {/*Normal Routes*/}
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/booking" element={<Booking />} />
+        {/*Signing & log out handling Routes */}
         <Route path="/user-register" element={<Register />} />
+        <Route path="/admin-panel/admin-register" element={<AdminRegister />} />
         <Route path="/user-login" element={<Login />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/logout" element={<Logout />} />
+        {/*Admin Panel Routes*/}
         <Route path="/admin-panel" element={<AdminPanel />} />
         <Route path="/admin-panel/view-menu-items" element={<ViewMenuComp />} />
         <Route
           path="/admin-panel/edit-menu-item/:id"
           element={<EditMenuComp />}
         />
+        <Route path="/admin-panel/view-bookings" element={<ViewBookings />} />
         <Route path="/admin-panel/view-users" element={<ViewUsersComp />} />
+        {/*User Routes*/}
         <Route path="/user-profile" element={<UserProfile />} />
-        <Route path="/logout" element={<Logout />} />
-        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route path="/my-bookings" element={<MyBookings />} />
       </Routes>
       <Footer />
     </>

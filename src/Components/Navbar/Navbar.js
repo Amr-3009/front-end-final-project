@@ -56,6 +56,11 @@ const Navbar = () => {
               Log out
             </NavLink>
           </li>
+          <li>
+            <NavLink className="hoverEff" to="/my-bookings">
+              My Bookings
+            </NavLink>
+          </li>
         </ul>
         <NavLink className="btn" to="/booking">
           Book A Table

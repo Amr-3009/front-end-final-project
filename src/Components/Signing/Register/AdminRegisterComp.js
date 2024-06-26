@@ -5,33 +5,19 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const AdminLogComp = () => {
-  const navigate = useNavigate();
+const AdminRegisterComp = () => {
   const [admin, setAdmin] = useState({
+    name: "",
     email: "",
     password: "",
   });
-  const hanldeLogin = () => {
+  const hanldeRegister = () => {
     axios
-      .post("http://127.0.0.1:8000/api/admin-login", admin, {
-        withCredentials: true,
-      })
+      .post("http://127.0.0.1:8000/api/admin-register", admin)
       .then((res) => {
         console.log(res.data);
-        const adminToken = res.data.AdminToken;
-        const adminId = res.data.adminID;
-        localStorage.setItem("AdminId", adminId);
-        localStorage.setItem("AdminToken", adminToken);
-        // axios.defaults.headers.common[
-        //   "Authorization"
-        // ] = `Bearer ${res.data.UserToken}`;
-        // navigate("/home");
-        return true;
       })
-      .catch((err) => {
-        console.log(err);
-        return false;
-      });
+      .catch((err) => console.log(err));
   };
   const preventDefault = (e) => {
     e.preventDefault();
@@ -40,10 +26,21 @@ const AdminLogComp = () => {
     <>
       <div className="filler"></div>
       <div className="sectionWrapper">
-        <h1>Admin Login</h1>
+        <h1>Admin Register</h1>
         <form onSubmit={(e) => preventDefault(e)}>
           <div className="form-group">
-            <label htmlFor="email">Admin Email</label>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              placeholder="Name"
+              value={admin.name}
+              onChange={(e) => setAdmin({ ...admin, name: e.target.value })}
+              autoComplete="on"
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email address</label>
             <input
               type="email"
               id="email"
@@ -54,7 +51,7 @@ const AdminLogComp = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="password">Admin Password</label>
+            <label htmlFor="password">Password</label>
             <input
               type="password"
               id="password"
@@ -63,8 +60,8 @@ const AdminLogComp = () => {
               onChange={(e) => setAdmin({ ...admin, password: e.target.value })}
             />
           </div>
-          <button type="submit" onClick={hanldeLogin}>
-            Admin Login
+          <button type="submit" onClick={hanldeRegister}>
+            Admin Register
           </button>
         </form>
       </div>
@@ -72,4 +69,4 @@ const AdminLogComp = () => {
   );
 };
 
-export default AdminLogComp;
+export default AdminRegisterComp;

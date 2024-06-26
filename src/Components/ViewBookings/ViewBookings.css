@@ -1,0 +1,34 @@
+.accept:hover {
+  background-color: #4caf50;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+}
+.reject:hover {
+  background-color: #f44336;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+}
+.accepted {
+  background-color: #4caf50;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+  p {
+    color: #fff;
+  }
+}
+.rejected {
+  background-color: #f44336;
+  color: #fff;
+  button {
+    color: #fff;
+  }
+  p {
+    color: #fff;
+  }
+}

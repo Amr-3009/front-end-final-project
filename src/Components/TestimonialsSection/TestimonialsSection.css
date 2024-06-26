@@ -68,3 +68,159 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .testimonialsSectionWrapper {
+    padding: 30px;
+    h2 {
+      font-size: 40px;
+      line-height: 45px;
+      text-align: center;
+    }
+    .cardsContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 100%;
+        .title {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        .content {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .userCard {
+          .userInfo {
+            .userName {
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .userAddress {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .testimonialsSectionWrapper {
+    padding: 30px;
+    h2 {
+      font-size: 40px;
+      line-height: 45px;
+      text-align: center;
+    }
+    .cardsContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 100%;
+        .title {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        .content {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .userCard {
+          .userInfo {
+            .userName {
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .userAddress {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .testimonialsSectionWrapper {
+    padding: 30px;
+    h2 {
+      font-size: 40px;
+      line-height: 45px;
+      text-align: center;
+    }
+    .cardsContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 100%;
+        .title {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        .content {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .userCard {
+          .userInfo {
+            .userName {
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .userAddress {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .testimonialsSectionWrapper {
+    padding: 30px;
+    h2 {
+      font-size: 40px;
+      line-height: 45px;
+      text-align: center;
+    }
+    .cardsContainer {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .card {
+        width: 100%;
+        .title {
+          font-size: 20px;
+          line-height: 26px;
+        }
+        .content {
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .userCard {
+          .userInfo {
+            .userName {
+              font-size: 14px;
+              line-height: 22px;
+            }
+            .userAddress {
+              font-size: 14px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

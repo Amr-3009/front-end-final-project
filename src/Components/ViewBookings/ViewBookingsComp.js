@@ -32,67 +32,69 @@ const ViewBookingsComp = () => {
   return (
     <div className="viewMenuWrapper">
       <h1>Bookings</h1>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Phone</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Guests</th>
-            <th colSpan={2}>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          {bookings?.map((booking) => (
-            <tr key={booking.id}>
-              <td>{booking.name}</td>
-              <td>{booking.phone}</td>
-              <td>{booking.date}</td>
-              <td>{booking.time}</td>
-              <td>{booking.Number_of_people}</td>
-              <td
-                className={
-                  booking.status === "Pending"
-                    ? "accept"
-                    : booking.status === "Accepted"
-                    ? "accepted"
-                    : null
-                }
-              >
-                {booking.status === "Pending" ? (
-                  <button onClick={() => handleAccept(booking.id)}>
-                    Accept
-                  </button>
-                ) : booking.status === "Accepted" ? (
-                  <p>Accepted</p>
-                ) : booking.status === "Rejected" ? (
-                  <p>Accept</p>
-                ) : null}
-              </td>
-              <td
-                className={
-                  booking.status === "Pending"
-                    ? "reject"
-                    : booking.status === "Rejected"
-                    ? "rejected"
-                    : null
-                }
-              >
-                {booking.status === "Pending" ? (
-                  <button onClick={() => handleReject(booking.id)}>
-                    Reject
-                  </button>
-                ) : booking.status === "Rejected" ? (
-                  <p>Rejected</p>
-                ) : booking.status === "Accepted" ? (
-                  <p>Reject</p>
-                ) : null}
-              </td>
+      <div className="responsiveTable">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Guests</th>
+              <th colSpan={2}>Actions</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {bookings?.map((booking) => (
+              <tr key={booking.id}>
+                <td>{booking.name}</td>
+                <td>{booking.phone}</td>
+                <td>{booking.date}</td>
+                <td>{booking.time}</td>
+                <td>{booking.Number_of_people}</td>
+                <td
+                  className={
+                    booking.status === "Pending"
+                      ? "accept"
+                      : booking.status === "Accepted"
+                      ? "accepted"
+                      : null
+                  }
+                >
+                  {booking.status === "Pending" ? (
+                    <button onClick={() => handleAccept(booking.id)}>
+                      Accept
+                    </button>
+                  ) : booking.status === "Accepted" ? (
+                    <p>Accepted</p>
+                  ) : booking.status === "Rejected" ? (
+                    <p>Accept</p>
+                  ) : null}
+                </td>
+                <td
+                  className={
+                    booking.status === "Pending"
+                      ? "reject"
+                      : booking.status === "Rejected"
+                      ? "rejected"
+                      : null
+                  }
+                >
+                  {booking.status === "Pending" ? (
+                    <button onClick={() => handleReject(booking.id)}>
+                      Reject
+                    </button>
+                  ) : booking.status === "Rejected" ? (
+                    <p>Rejected</p>
+                  ) : booking.status === "Accepted" ? (
+                    <p>Reject</p>
+                  ) : null}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

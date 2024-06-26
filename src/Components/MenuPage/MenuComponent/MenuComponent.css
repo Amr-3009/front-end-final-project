@@ -1,4 +1,5 @@
 .menuWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -125,4 +126,212 @@
 }
 .menuButton:hover::before {
   transform: scaleX(1);
+}
+
+@media screen and (max-width: 375px) {
+  .menuWrapper {
+    width: 100%;
+    padding: 30px;
+    .menuTitle {
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+      .buttonSection {
+        flex-direction: column;
+        gap: 10px;
+        .menuButton {
+          padding: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    .menuContainer {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      .menuItem {
+        img {
+          width: 100%;
+          height: 200px;
+        }
+        .itemInfo {
+          padding: 0px 20px 20px 20px;
+          h3 {
+            font-size: 20px;
+            line-height: 24px;
+          }
+          h4 {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .menuWrapper {
+    width: 100%;
+    padding: 30px;
+    .menuTitle {
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+      .buttonSection {
+        flex-direction: column;
+        gap: 10px;
+        .menuButton {
+          padding: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    .menuContainer {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      .menuItem {
+        img {
+          width: 100%;
+          height: 200px;
+        }
+        .itemInfo {
+          padding: 0px 20px 20px 20px;
+          h3 {
+            font-size: 20px;
+            line-height: 24px;
+          }
+          h4 {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .menuWrapper {
+    width: 100%;
+    padding: 30px;
+    .menuTitle {
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+      .buttonSection {
+        flex-direction: column;
+        gap: 10px;
+        .menuButton {
+          padding: 10px;
+          font-size: 12px;
+        }
+      }
+    }
+    .menuContainer {
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      .menuItem {
+        img {
+          width: 100%;
+          height: 200px;
+        }
+        .itemInfo {
+          padding: 0px 20px 20px 20px;
+          h3 {
+            font-size: 20px;
+            line-height: 24px;
+          }
+          h4 {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .menuWrapper {
+    width: 100%;
+    padding: 30px;
+    .menuTitle {
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+        margin-bottom: 10px;
+      }
+      p {
+        width: 100%;
+        font-size: 14px;
+        line-height: 24px;
+        margin-bottom: 20px;
+      }
+      .buttonSection {
+        gap: 10px;
+        .menuButton {
+          padding: 10px 50px;
+          font-size: 16px;
+        }
+      }
+    }
+    .menuContainer {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      .menuItem {
+        img {
+          width: 100%;
+          height: 200px;
+        }
+        .itemInfo {
+          padding: 0px 20px 20px 20px;
+          h3 {
+            font-size: 20px;
+            line-height: 24px;
+          }
+          h4 {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          p {
+            font-size: 12px;
+            line-height: 20px;
+          }
+        }
+      }
+    }
+  }
 }

@@ -126,3 +126,32 @@
     }
   }
 }
+
+.responsiveTable {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 375px) {
+  .viewMenuWrapper {
+    form {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .viewMenuWrapper {
+    form {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .viewMenuWrapper {
+    form {
+      width: 100%;
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+}

@@ -61,3 +61,110 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .aboutSection3Wrapper {
+    padding: 30px;
+    .imageWrapper {
+      display: none;
+    }
+    .infoWrapper {
+      .infoText {
+        h2 {
+          font-size: 20px;
+          line-height: 40px;
+        }
+        p {
+          font-size: 12px;
+          line-height: 24px;
+        }
+      }
+      .infoCards {
+        .card {
+          padding: 0px 0px 0px 0px;
+          gap: 0px;
+          h3 {
+            font-size: 10px;
+            line-height: 24px;
+          }
+          p {
+            font-size: 8px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .aboutSection3Wrapper {
+    padding: 30px;
+    .imageWrapper {
+      display: none;
+    }
+    .infoWrapper {
+      .infoText {
+        h2 {
+          font-size: 20px;
+          line-height: 40px;
+        }
+        p {
+          font-size: 12px;
+          line-height: 24px;
+        }
+      }
+      .infoCards {
+        .card {
+          padding: 0px 0px 0px 0px;
+          gap: 0px;
+          h3 {
+            font-size: 10px;
+            line-height: 24px;
+          }
+          p {
+            font-size: 8px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1204px) {
+  .aboutSection3Wrapper {
+    flex-direction: column;
+    padding: 30px;
+    .imageWrapper {
+      order: 1;
+    }
+    .infoWrapper {
+      order: 2;
+      .infoText {
+        h2 {
+          font-size: 48px;
+          line-height: 40px;
+        }
+        p {
+          font-size: 36px;
+          line-height: 36px;
+        }
+      }
+      .infoCards {
+        .card {
+          padding: 0px 0px 0px 0px;
+          gap: 0px;
+          h3 {
+            font-size: 24px;
+            line-height: 24px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+}

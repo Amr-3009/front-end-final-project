@@ -148,6 +148,7 @@ const ViewMenuComp = () => {
           </div>
         </form>
         <h2>View Menu Items</h2>
+        <div className="responsiveTable">
         <table>
           <thead>
             <tr>
@@ -189,6 +190,7 @@ const ViewMenuComp = () => {
             ))}
           </tbody>
         </table>
+        </div>
       </div>
     </>
   );

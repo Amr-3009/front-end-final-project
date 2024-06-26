@@ -17,7 +17,7 @@ const AdminPanelComp = () => {
           <Link to="/admin-panel/view-bookings">View Bookings</Link>
         </li>
         <li>
-          <Link to="/admin-panel/admin-register">Register a new Admin</Link>
+          <Link to="/admin-panel/admin-register">Admin Register</Link>
         </li>
       </ul>
     </div>

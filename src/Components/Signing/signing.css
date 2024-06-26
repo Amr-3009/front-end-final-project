@@ -1,4 +1,5 @@
 .sectionWrapper {
+  width: 100%;
   padding-top: 74px;
   padding-bottom: 74px;
   display: flex;
@@ -149,7 +150,7 @@
       }
     }
   }
-  .textWrapper{
+  .textWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -172,7 +173,7 @@
   }
 }
 .filler {
-  height: 129px;
+  height: 500px;
   background-color: #f9f9f7;
   width: 100%;
   position: absolute;
@@ -196,4 +197,103 @@
 }
 .ghostBtn:hover::before {
   transform: scaleX(1);
+}
+
+@media screen and (max-width: 375px) {
+  .sectionWrapper {
+    padding: 48px 24px 24px 24px;
+    h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    form {
+      padding: 48px 24px 24px 24px;
+      .form-group {
+        input {
+          width: 100%;
+        }
+      }
+      button {
+        width: 100%;
+      }
+    }
+    .buttonWrapper {
+      padding: 24px;
+      p {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .buttons {
+        flex-direction: column;
+        .ghostBtn {
+          width: 100%;
+        }
+        .filledBtn {
+          width: 100%;
+        }
+      }
+    }
+    .textWrapper {
+      gap: 12px;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .sectionWrapper {
+    padding: 48px 24px 24px 24px;
+    h1 {
+      font-size: 48px;
+      line-height: 48px;
+    }
+    p {
+      font-size: 24px;
+      line-height: 24px;
+    }
+    form {
+      padding: 48px 24px 24px 24px;
+      .form-group {
+        input {
+          width: 100%;
+        }
+      }
+      button {
+        width: 100%;
+      }
+    }
+    .buttonWrapper {
+      padding: 24px;
+      p {
+        font-size: 24px;
+        line-height: 24px;
+      }
+      .buttons {
+        flex-direction: column;
+        .ghostBtn {
+          width: 100%;
+        }
+        .filledBtn {
+          width: 100%;
+        }
+      }
+    }
+    .textWrapper {
+      gap: 12px;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
 }

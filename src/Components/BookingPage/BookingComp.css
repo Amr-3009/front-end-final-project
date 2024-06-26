@@ -15,6 +15,7 @@
 }
 
 .bookingWrapper {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -103,11 +104,6 @@
           font-weight: 400;
           line-height: 24px;
           color: #2c2f24;
-          -webkit-appearance: none;
-          -moz-appearance: none !important;
-          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAUCAMAAACtdX32AAAAdVBMVEUAAAD///8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAhMdQaAAAAJ3RSTlMAAAECAwQGBwsOFBwkJTg5RUZ4eYCHkJefpaytrsXGy8zW3+Do8vNn0bsyAAAAYElEQVR42tXROwJDQAAA0Ymw1p9kiT+L5P5HVEi3qJn2lcPjtIuzUIJ/rhIGy762N3XaThqMN1ZPALsZPEzG1x8LrFL77DHBnEMxBewz0fJ6LyFHTPL7xhwzWYrJ9z22AqmQBV757MHfAAAAAElFTkSuQmCC);
-          background-repeat: no-repeat;
-          background-position: right 14px top 50%;
         }
       }
       .filledBtn {
@@ -126,4 +122,157 @@
       }
     }
   }
+}
+
+@media screen and (max-width: 375px) {
+  .bookingWrapper {
+    .bookingText {
+      h1 {
+        font-size: 50px;
+        line-height: 48px;
+      }
+      p {
+        width: 80%;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    .bookingForm {
+      form {
+        padding: 24px;
+        .row {
+          flex-direction: column;
+          gap: 16px;
+          .rowElement {
+            input {
+              width: 100%;
+              height: 40px;
+              border-radius: 72px;
+              padding: 0 16px;
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+        .selectorRow {
+          gap: 16px;
+          select {
+            height: 40px;
+            border-radius: 72px;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+        .filledBtn {
+          padding: 16px 24px;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .bookingWrapper {
+    .bookingText {
+      h1 {
+        font-size: 50px;
+        line-height: 48px;
+      }
+      p {
+        width: 80%;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+    .bookingForm {
+      form {
+        padding: 24px;
+        .row {
+          flex-direction: column;
+          gap: 16px;
+          .rowElement {
+            input {
+              width: 100%;
+              height: 40px;
+              border-radius: 72px;
+              padding: 0 16px;
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+        .selectorRow {
+          gap: 16px;
+          select {
+            height: 40px;
+            border-radius: 72px;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+        .filledBtn {
+          padding: 16px 24px;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bookingWrapper{
+    width: 100%;
+    .bookingText{
+      h1{
+        font-size: 70px;
+        line-height: 68px;
+      }
+      p{
+        width: 80%;
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+    .bookingForm{
+      width: 99%;
+      form{
+        padding: 30px;
+        .row{
+          flex-direction: column;
+          gap: 16px;
+          .rowElement{
+            input{
+              width: 100%;
+              height: 40px;
+              border-radius: 72px;
+              padding: 0 16px;
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+        .selectorRow{
+          gap: 16px;
+          select{
+            height: 40px;
+            border-radius: 72px;
+            padding: 0 16px;
+            font-size: 14px;
+            line-height: 24px;
+          }
+        }
+        .filledBtn{
+          padding: 16px 24px;
+          font-size: 14px;
+          line-height: 24px;
+        }
+      }
+    }
+  
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
 }

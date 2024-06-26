@@ -4,8 +4,20 @@
   align-items: center;
   height: 80vh;
   h1 {
+    text-align: center;
     font-family: "Playfair Display", serif;
     font-size: 3rem;
     color: #343a40;
   }
 }
+
+@media screen and (max-width: 375px){
+  .errorWrapper {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px){}
+@media screen and (min-width: 768px) and (max-width: 1024px){}
+@media screen and (min-width: 1024px) and (max-width: 1440px){}

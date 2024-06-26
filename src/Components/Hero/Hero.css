@@ -10,47 +10,38 @@
   margin-top: 22px;
   .heroText {
     width: 50%;
-    /* style */
     text-align: center;
     h1 {
-      /* font */
       font-family: "Playfair Display", serif;
       font-size: 100px;
       font-weight: 400;
       line-height: 96px;
       color: #2c2f24;
-      /* style */
       margin-bottom: 32px;
     }
     p {
       width: 70%;
-      /* font */
       font-family: "DM Sans", sans-serif;
       font-size: 20px;
       font-weight: 400;
       line-height: 32px;
       color: #2c2f24;
-      /* style */
       text-align: center;
       margin: 0 auto;
     }
   }
   .btnContainer {
-    /* display */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* position */
     margin-top: 40px;
     gap: 16px;
     .ghost-btn {
-      /* font */
       font-family: "DM Sans", sans-serif;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       color: #182226;
-      /* style */
       padding: 20px 32px;
       background-color: rgba(0, 0, 0, 0);
       cursor: pointer;
@@ -59,13 +50,11 @@
       text-decoration: none;
     }
     .filled-btn {
-      /* font */
       font-family: "DM Sans", sans-serif;
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
       color: white;
-      /* style */
       padding: 20px 32px;
       background-color: #ad343e;
       cursor: pointer;
@@ -73,6 +62,131 @@
       border: none;
       outline: none;
       text-decoration: none;
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .heroSection {
+    margin-top: 24px;
+    height: 100%;
+    background-image: url("../../Assets/Images/hero-background-resize-1.png");
+    background-size: cover;
+    .heroText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        width: 50%;
+        font-size: 30px;
+        line-height: 24px;
+        margin-top: 16px;
+      }
+      p {
+        display: none;
+      }
+    }
+    .btnContainer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .heroSection {
+    margin-top: 24px;
+    height: 100%;
+    background-image: url("../../Assets/Images/hero-background-resize-1.png");
+    background-size: cover;
+    .heroText {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        width: 50%;
+        font-size: 30px;
+        line-height: 24px;
+        margin-top: 16px;
+      }
+      p {
+        display: none;
+      }
+    }
+    .btnContainer {
+      .ghost-btn,
+      .filled-btn {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .heroSection {
+    .heroText {
+      h1 {
+        font-size: 60px;
+        line-height: 56px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+    .btnContainer {
+      .ghost-btn,
+      .filled-btn {
+        font-size: 16px;
+        padding: 18px 28px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .heroSection {
+    background-image: url("../../Assets/Images/hero-background.png");
+    background-size: cover;
+    .heroText {
+      h1 {
+        font-size: 80px;
+        line-height: 76px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+    .btnContainer {
+      .ghost-btn,
+      .filled-btn {
+        font-size: 16px;
+        padding: 20px 32px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .heroSection {
+    .heroText {
+      h1 {
+        font-size: 100px;
+        line-height: 96px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 32px;
+      }
+    }
+    .btnContainer {
+      .ghost-btn,
+      .filled-btn {
+        font-size: 16px;
+        padding: 20px 32px;
+      }
     }
   }
 }

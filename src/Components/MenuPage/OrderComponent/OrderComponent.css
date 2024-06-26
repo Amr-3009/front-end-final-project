@@ -1,4 +1,5 @@
 .orderComponentWrapper {
+  width: 100%;
   background-color: #f9f9f7;
   display: flex;
   justify-content: center;
@@ -79,6 +80,137 @@
         border-radius: 12px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
       }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .orderComponentWrapper {
+    width: 100%;
+    padding: 30px 20px;
+    flex-direction: column;
+    .orderText {
+      text-align: center;
+      p {
+        width: 100%;
+      }
+    }
+  }
+  .orderLogos {
+    width: 100%;
+    .row1 {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .row2 {
+      flex-direction: column;
+      gap: 20px;
+      .icon {
+        width: 220px !important;
+        svg {
+          width: 153px;
+        }
+      }
+    }
+    .row3 {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .orderComponentWrapper {
+    width: 100%;
+    padding: 30px 20px;
+    flex-direction: column;
+    .orderText {
+      text-align: center;
+      p {
+        width: 100%;
+      }
+    }
+  }
+  .orderLogos {
+    width: 100%;
+    .row1 {
+      flex-direction: column;
+      gap: 20px;
+    }
+    .row2 {
+      flex-direction: column;
+      gap: 20px;
+      .icon {
+        width: 220px !important;
+        svg {
+          width: 153px;
+        }
+      }
+    }
+    .row3 {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .orderComponentWrapper {
+    width: 100%;
+    padding: 30px 20px;
+    flex-direction: column;
+    .orderText {
+      text-align: center;
+      p {
+        width: 100%;
+      }
+    }
+  }
+  .orderLogos {
+    width: 100%;
+    .row1 {
+      gap: 20px;
+    }
+    .row2 {
+      gap: 20px;
+      .icon {
+        width: 220px !important;
+        svg {
+          width: 153px;
+        }
+      }
+    }
+    .row3 {
+      gap: 20px;
+    }
+  }
+}
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .orderComponentWrapper {
+    width: 100%;
+    padding: 30px 20px;
+    flex-direction: column;
+    .orderText {
+      text-align: center;
+      p {
+        width: 100%;
+      }
+    }
+  }
+  .orderLogos {
+    width: 100%;
+    .row1 {
+      gap: 20px;
+    }
+    .row2 {
+      gap: 20px;
+      .icon {
+        width: 220px !important;
+        svg {
+          width: 153px;
+        }
+      }
+    }
+    .row3 {
+      gap: 20px;
     }
   }
 }

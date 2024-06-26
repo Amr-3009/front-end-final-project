@@ -21,10 +21,12 @@ import AdminRegister from "./Routes/AdminRegister";
 import Error from "./Routes/Error";
 import LoginPlease from "./Routes/LoginPlease";
 import NotFound from "./Routes/NotFound";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
     <>
+      <Header />
       <Navbar />
       <Routes>
         {/*Normal Routes*/}

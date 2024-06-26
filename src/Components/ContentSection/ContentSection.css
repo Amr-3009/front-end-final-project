@@ -30,7 +30,7 @@
       color: #2c2f24;
       font-weight: 500;
     }
-    p{
+    p {
       font-family: "DM Sans", sans-serif;
       font-size: 14px;
       line-height: 24px;
@@ -38,11 +38,11 @@
       color: #414536;
     }
   }
-  .featuresContainer{
+  .featuresContainer {
     display: flex;
     flex-direction: column;
     gap: 20px;
-    .row{
+    .row {
       display: flex;
       align-items: center;
       gap: 20px;
@@ -51,8 +51,132 @@
       line-height: 26px;
       color: #2c2f24;
       font-weight: 500;
-      svg{
+      svg {
         margin: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .contentSectionWrapper {
+    flex-direction: column;
+    padding: 30px;
+    gap: 0;
+    .imageContainer {
+      scale: 0.3;
+      margin-bottom: -200px;
+      margin-top: -200px;
+    }
+    .description {
+      margin-bottom: 24px;
+      h2 {
+        font-size: 24px;
+        line-height: 45px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+    .featuresContainer {
+      .row {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .contentSectionWrapper {
+    flex-direction: column;
+    padding: 30px;
+    gap: 0;
+    .imageContainer {
+      scale: 0.3;
+      margin-bottom: -200px;
+      margin-top: -200px;
+    }
+    .description {
+      margin-bottom: 24px;
+      h2 {
+        font-size: 24px;
+        line-height: 45px;
+      }
+      p {
+        font-size: 12px;
+        line-height: 24px;
+      }
+    }
+    .featuresContainer {
+      .row {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contentSectionWrapper {
+    flex-direction: column;
+    padding: 60px;
+    gap: 0;
+    .imageContainer {
+      scale: 0.6;
+      margin-bottom: -100px;
+      margin-top: -100px;
+    }
+    .description {
+      margin-bottom: 24px;
+      h2 {
+        text-align: center;
+        font-size: 48px;
+        line-height: 45px;
+      }
+      p {
+        text-align: center;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+    .featuresContainer {
+      .row {
+        font-size: 20px;
+        line-height: 24px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .contentSectionWrapper {
+    flex-direction: column;
+    padding: 60px;
+    gap: 0;
+    .imageContainer {
+      scale: 0.8;
+      margin-bottom: -40px;
+      margin-top: -50px;
+    }
+    .description {
+      margin-bottom: 24px;
+      h2 {
+        text-align: center;
+        font-size: 48px;
+        line-height: 45px;
+      }
+      p {
+        text-align: center;
+        font-size: 24px;
+        line-height: 24px;
+      }
+    }
+    .featuresContainer {
+      .row {
+        font-size: 20px;
+        line-height: 24px;
       }
     }
   }

@@ -72,3 +72,33 @@
     }
   }
 }
+
+@media screen and (max-width: 375px) {
+  .header {
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .textContainer{
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+  .header {
+    height: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    .textContainer{
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+    }
+  }
+}

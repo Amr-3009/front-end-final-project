@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AdminRegisterComp = () => {
+  const navigate = useNavigate();
   const [admin, setAdmin] = useState({
     name: "",
     email: "",
@@ -18,6 +19,9 @@ const AdminRegisterComp = () => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
+      navigate("/admin-panel");
+      window.location.reload();
+      alert("Admin Register Successfully");
   };
   const preventDefault = (e) => {
     e.preventDefault();

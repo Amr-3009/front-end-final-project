@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 const EditMenuComp = () => {
+  const adminToken = localStorage.getItem("AdminToken");
   const navigate = useNavigate();
   const { id } = useParams();
   const [formData, setFormData] = useState({
@@ -16,12 +17,16 @@ const EditMenuComp = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/menu/${id}`)
+      .get(`http://127.0.0.1:8000/api/menu/${id}`, {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         setFormData(res.data);
       })
       .catch((err) => console.log(err));
-  }, [id]);
+  }, [id, adminToken]);
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -48,6 +53,7 @@ const EditMenuComp = () => {
           "Content-Type": "multipart/form-data",
           Accept: "application/json",
           "X-HTTP-Method-Override": "PUT",
+          Authorization: `Bearer ${adminToken}`,
         },
       })
       .then((res) => {

@@ -3,15 +3,20 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 
 const ViewUsersComp = () => {
+  const adminToken = localStorage.getItem("adminToken");
   const [users, setUsers] = useState();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/users")
+      .get("http://127.0.0.1:8000/api/users", {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         setUsers(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [adminToken]);
   return (
     <div className="viewMenuWrapper">
       <h1>Users</h1>

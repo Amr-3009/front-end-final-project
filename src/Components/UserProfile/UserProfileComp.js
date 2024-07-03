@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const UserProfileComp = () => {
   const userId = localStorage.getItem("UserId");
+  const userToken = localStorage.getItem("UserToken");
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -12,13 +13,17 @@ const UserProfileComp = () => {
 
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/user/${userId}`)
+      .get(`http://127.0.0.1:8000/api/user/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      })
       .then((res) => {
         console.log(res.data);
         setUser(res.data);
       })
       .catch((err) => console.log(err));
-  }, [userId]);
+  }, [userId, userToken]);
 
   const formSubmit = (e) => {
     e.preventDefault();
@@ -43,6 +48,7 @@ const UserProfileComp = () => {
             "Content-Type": "multipart/form-data",
             Accept: "application/json",
             "X-HTTP-Method-Override": "PUT",
+            Authorization: `Bearer ${userToken}`,
           },
         }
       )

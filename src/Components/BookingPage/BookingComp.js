@@ -5,6 +5,7 @@ import axios from "axios";
 
 const BookingComp = () => {
   const userId = localStorage.getItem("UserId");
+  const userToken = localStorage.getItem("UserToken");
   const [booking, setBooking] = useState({
     date: "",
     time: "",
@@ -34,6 +35,7 @@ const BookingComp = () => {
         headers: {
           "Content-Type": "multipart/form-data",
           Accept: "application/json",
+          Authorization: `Bearer ${userToken}`,
         },
       })
       .then((res) => {

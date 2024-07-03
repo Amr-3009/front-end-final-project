@@ -7,9 +7,14 @@ import { FaArrowUp } from "react-icons/fa6";
 import { FaArrowDown } from "react-icons/fa";
 
 const ViewMenuComp = () => {
+  const adminToken = localStorage.getItem("adminToken");
   const handleDelete = (id) => {
     axios
-      .delete(`http://127.0.0.1:8000/api/menu/${id}`)
+      .delete(`http://127.0.0.1:8000/api/menu/${id}`, {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         console.log(res.data);
       })
@@ -58,6 +63,7 @@ const ViewMenuComp = () => {
       const res = await axios.post("http://127.0.0.1:8000/api/menu", form, {
         headers: {
           "Content-Type": "multipart/form-data",
+          Authorization: `Bearer ${adminToken}`,
         },
       });
       console.log(res.data);
@@ -72,12 +78,16 @@ const ViewMenuComp = () => {
   const [menuItems, setMenuItems] = useState();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/menu")
+      .get("http://127.0.0.1:8000/api/menu", {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         setMenuItems(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [adminToken]);
   return (
     <>
       <div className="viewMenuWrapper">
@@ -149,47 +159,49 @@ const ViewMenuComp = () => {
         </form>
         <h2>View Menu Items</h2>
         <div className="responsiveTable">
-        <table>
-          <thead>
-            <tr>
-              <th>Item ID</th>
-              <th>Item Name</th>
-              <th>Item Price</th>
-              <th>Item Ingredients</th>
-              <th>Item Category</th>
-              <th>Item Image</th>
-              <th colSpan={2}>Actions</th>
-              <th onClick={handleTable} className="arrow">
-                {showTable ? <FaArrowDown /> : <FaArrowUp />}
-              </th>
-            </tr>
-          </thead>
-          <tbody style={showTable ? { display: "none" } : { display: "" }}>
-            {menuItems?.map((item) => (
-              <tr key={item.id}>
-                <td>{item.id}</td>
-                <td>{item.name}</td>
-                <td>$ {item.price}</td>
-                <td>{item.ingredients}</td>
-                <td>{item.category}</td>
-                <td>
-                  <img
-                    src={`http://127.0.0.1:8000/${item.image}`}
-                    alt={item.name}
-                  />
-                </td>
-                <td>
-                  <Link to={`/admin-panel/edit-menu-item/${item.id}`}>
-                    Edit
-                  </Link>
-                </td>
-                <td>
-                  <button onClick={() => handleDelete(item.id)}>Delete</button>
-                </td>
+          <table>
+            <thead>
+              <tr>
+                <th>Item ID</th>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Item Ingredients</th>
+                <th>Item Category</th>
+                <th>Item Image</th>
+                <th colSpan={2}>Actions</th>
+                <th onClick={handleTable} className="arrow">
+                  {showTable ? <FaArrowDown /> : <FaArrowUp />}
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody style={showTable ? { display: "none" } : { display: "" }}>
+              {menuItems?.map((item) => (
+                <tr key={item.id}>
+                  <td>{item.id}</td>
+                  <td>{item.name}</td>
+                  <td>$ {item.price}</td>
+                  <td>{item.ingredients}</td>
+                  <td>{item.category}</td>
+                  <td>
+                    <img
+                      src={`http://127.0.0.1:8000/${item.image}`}
+                      alt={item.name}
+                    />
+                  </td>
+                  <td>
+                    <Link to={`/admin-panel/edit-menu-item/${item.id}`}>
+                      Edit
+                    </Link>
+                  </td>
+                  <td>
+                    <button onClick={() => handleDelete(item.id)}>
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </>

@@ -6,6 +6,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AdminRegisterComp = () => {
+  const adminToken = localStorage.getItem("AdminToken");
   const navigate = useNavigate();
   const [admin, setAdmin] = useState({
     name: "",
@@ -14,14 +15,20 @@ const AdminRegisterComp = () => {
   });
   const hanldeRegister = () => {
     axios
-      .post("http://127.0.0.1:8000/api/admin-register", admin)
+      .post("http://127.0.0.1:8000/api/admin-register", admin, {
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         console.log(res.data);
       })
       .catch((err) => console.log(err));
-      navigate("/admin-panel");
-      window.location.reload();
-      alert("Admin Register Successfully");
+    navigate("/admin-panel");
+    window.location.reload();
+    alert("Admin Register Successfully");
   };
   const preventDefault = (e) => {
     e.preventDefault();

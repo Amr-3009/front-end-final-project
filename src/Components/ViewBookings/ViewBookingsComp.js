@@ -4,18 +4,27 @@ import { useEffect, useState } from "react";
 import "./ViewBookings.css";
 
 const ViewBookingsComp = () => {
+  const adminToken = localStorage.getItem("adminToken");
   const [bookings, setBookings] = useState();
   useEffect(() => {
     axios
-      .get("http://127.0.0.1:8000/api/bookings")
+      .get("http://127.0.0.1:8000/api/bookings", {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         setBookings(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [adminToken]);
   const handleAccept = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/accept-booking/${id}`)
+      .put(`http://127.0.0.1:8000/api/accept-booking/${id}`, {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         console.log(res.data);
       })
@@ -23,7 +32,11 @@ const ViewBookingsComp = () => {
   };
   const handleReject = (id) => {
     axios
-      .put(`http://127.0.0.1:8000/api/reject-booking/${id}`)
+      .put(`http://127.0.0.1:8000/api/reject-booking/${id}`, {
+        headers: {
+          Authorization: `Bearer ${adminToken}`,
+        },
+      })
       .then((res) => {
         console.log(res.data);
       })

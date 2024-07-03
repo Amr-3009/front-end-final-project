@@ -4,15 +4,20 @@ import { useEffect, useState } from "react";
 
 const MyBookingsComp = () => {
   const userId = localStorage.getItem("UserId");
+  const userToken = localStorage.getItem("UserToken");
   const [bookings, setBookings] = useState();
   useEffect(() => {
     axios
-      .get(`http://127.0.0.1:8000/api/user-bookings/${userId}`)
+      .get(`http://127.0.0.1:8000/api/user-bookings/${userId}`, {
+        headers: {
+          Authorization: `Bearer ${userToken}`,
+        },
+      })
       .then((res) => {
         setBookings(res.data);
       })
       .catch((err) => console.log(err));
-  }, [userId]);
+  }, [userId, userToken]);
   return (
     <div className="viewMenuWrapper">
       <h1>My Bookings</h1>
